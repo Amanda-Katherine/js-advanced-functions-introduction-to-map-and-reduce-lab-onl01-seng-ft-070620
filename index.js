@@ -32,15 +32,17 @@ function mapToSquare(array) {
     return squaredArray
 }
 
-function reduceToTotal(array, startingPoint) {
-
+function reduceToTotal(array, startingPoint=0) {
+    return array.reduce((accumulator, currentValue) => {
+        return accumulator + currentValue
+    }, startingPoint)
 }
 
 function reduceToAllTrue(array) {
-
+    return Boolean(array.reduce((a,b) => a && b))
 }
 
 function reduceToAnyTrue(array) {
-
+    return Boolean(array.reduce((a,b) => a || b))
 }
 
